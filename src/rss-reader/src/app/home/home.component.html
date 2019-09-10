@@ -1,0 +1,46 @@
+<div class="block">
+  <div class="search_box">
+    <div class="ui centered grid caption">
+      <p>Now parse your RSS feeds !</p>
+    </div>
+    <div class="ui segment"></div>
+    <div class="ui grid">
+      <div class="ui row">
+        <div
+          class="one wide tablet one wide mobile four wide computer column"
+        ></div>
+        <div class="fourteen wide column">
+          <div class="ui search">
+            <input
+              class="prompt"
+              type="text"
+              placeholder="Enter RSS Feed URL"
+              [(ngModel)]="search_input"
+            />
+            <div class="results"></div>
+          </div>
+        </div>
+        <div
+          class="one wide tablet one wide mobile four wide computer column"
+        ></div>
+      </div>
+      <div class="ui row">
+        <div
+          class="one wide tablet one wide mobile four wide computer column"
+        ></div>
+        <div class="fourteen wide right aligned column">
+          <button class="ui primary button" [class.loading]="loading" (click)='get_feeds()'>
+            search
+          </button>
+          <button class="ui primary button" (click)='clear()'>
+            clear
+          </button>
+        </div>
+        <div
+          class="one wide tablet one wide mobile four wide computer column"
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-feeds [feeds]="feeds" *ngIf="feeds"></app-feeds>
