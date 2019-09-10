@@ -6,10 +6,13 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./feeds.component.scss']
 })
 export class FeedsComponent implements OnInit {
-  @Input() private feeds: any;
+  @Input() public feeds: any;
+  public feed: any;
+  public entries: any;
   constructor() {}
 
   ngOnInit() {
-    console.log(this.feeds);
+    this.feed = this.feeds.feed;
+    this.entries = this.feeds.entries;
   }
 }

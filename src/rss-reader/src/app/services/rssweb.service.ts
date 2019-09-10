@@ -13,6 +13,7 @@ export class RsswebService {
         url
       }
     };
-    return this.http.get<any>('http://127.0.0.1:5000/parse', options);
+    // return this.http.get<any>('http://127.0.0.1:5000/parse', options);
+    return this.http.get<any>('/parse', options);
   }
 }

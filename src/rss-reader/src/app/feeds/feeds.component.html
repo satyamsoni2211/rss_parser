@@ -1,1 +1,40 @@
-<p>feeds works!</p>
+<div class="ui stackable grid">
+  <div class="row">
+    <div class="four wide column">
+      <img [src]="feed.image" alt="" width="100%" height="100%" />
+    </div>
+    <div class="twelve wide column">
+      <div class="row">
+        <p class="title">{{ feed.title }}</p>
+      </div>
+      <div class="ui divider"></div>
+      <div class="row">
+        <a [href]="feed.link" class="mask">{{ feed.link }}</a>
+      </div>
+      <div class="ui hidden divider"></div>
+      <div class="row">
+        <p class="mask">{{ feed.liscence }}</p>
+      </div>
+      <div class="ui hidden divider"></div>
+      <div class="four column row">
+        <p class="time">UPDATED ON: {{ feed.updated }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ui stackable container grid">
+  <div class="ui container grid entry" *ngFor="let entry of entries">
+    <div class="row title">
+      {{ entry.title }}
+    </div>
+    <div class="row">
+      <div class="sixteen wide mobile twelve wide computer column">
+        {{ entry.summary }}<a [href]="entry.link">read more...</a>
+      </div>
+      <div class="sixteen wide mobile four wide computer right aligned column">
+        {{ entry.published }}
+      </div>
+    </div>
+    <div class="ui divider"></div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.title {
+  text-transform: uppercase;
+  font-size: 2.5em;
+}
+.mask {
+  font-size: 1.2em;
+}
+.time {
+  color: grey;
+}
+.entry {
+  .title {
+    font-size: 1.5em;
+    text-transform: capitalize;
+  }
+}

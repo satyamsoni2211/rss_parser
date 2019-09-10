@@ -3,6 +3,36 @@
     <div class="ui centered grid caption">
       <p>Now parse your RSS feeds !</p>
     </div>
+
+    <!-- error and success messages {% endcomment %} -->
+    <div class="ui centered grid">
+      <div class="sixteen wide column">
+        <div class="error" *ngIf="error">
+          <div class="ui hidden divider"></div>
+          <div class="ui negative message">
+            <i class="close icon" (click)="close_error()"></i>
+            <div class="header">
+              Sorry this feed can't be loaded !
+            </div>
+            <p>kindly check the feed and retry !</p>
+          </div>
+        </div>
+      </div>
+      <div class="sixteen wide column">
+        <div class="success" *ngIf="success">
+          <div class="ui hidden divider"></div>
+          <div class="ui positive message">
+            <i class="close icon" (click)="close_success()"></i>
+            <div class="header">
+              Feed loaded successfully
+            </div>
+            <p>kindly scroll down to view the feed !</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- form  -->
     <div class="ui segment"></div>
     <div class="ui grid">
       <div class="ui row">
@@ -29,10 +59,14 @@
           class="one wide tablet one wide mobile four wide computer column"
         ></div>
         <div class="fourteen wide right aligned column">
-          <button class="ui primary button" [class.loading]="loading" (click)='get_feeds()'>
+          <button
+            class="ui primary button"
+            [class.loading]="loading"
+            (click)="get_feeds()"
+          >
             search
           </button>
-          <button class="ui primary button" (click)='clear()'>
+          <button class="ui primary button" (click)="clear()">
             clear
           </button>
         </div>
